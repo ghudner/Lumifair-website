@@ -316,16 +316,17 @@ footer{border-top:1px solid rgba(30,32,32,.25);margin-top:96px;padding:26px 0 34
         <h2 class="rv" style="margin-bottom:16px">Tell me about your mission</h2>
         <p>Every project starts with a conversation. Pricing is adjusted for the size of your organization.</p>
         <p style="font-size:15px;color:#4A4D4D">Based in Regina, Canada. Working with organizations anywhere.</p>
+        <p style="font-size:16px;margin-top:18px">Prefer email? Write to <a href="mailto:lumifair.consulting@gmail.com" style="font-weight:700">lumifair.consulting@gmail.com</a></p>
       </div>
       <form id="form" novalidate>
         <label>Your name<input name="name" autocomplete="name" required></label>
         <label>Organization<input name="org" autocomplete="organization"></label>
         <label>Email<input name="email" type="email" autocomplete="email" required></label>
         <label>What's your mission, and what slows you down?<textarea name="msg" rows="4"></textarea></label>
-        <button class="btn btn-ink" type="submit" style="justify-self:start">Send</button>
+        <button class="btn btn-ink" type="submit" style="justify-self:start">Send by email</button>
         <p id="err" role="alert" style="margin:0;color:#8A2E12;font-weight:600"></p>
       </form>
-      <div class="thanks" id="thanks" hidden tabindex="-1"><b style="font-size:22px">Thanks, <span id="who"></span>.</b><p>This preview doesn't send messages yet. On the live site, Ian will reply within a day or two.</p></div>
+      <div class="thanks" id="thanks" hidden tabindex="-1"><b style="font-size:22px">Thanks, <span id="who"></span>.</b><p>Your email app should open with your message ready to send. If it didn't, email <a href="mailto:lumifair.consulting@gmail.com" style="font-weight:700">lumifair.consulting@gmail.com</a> directly.</p><button class="btn btn-ink" type="button" id="copy" style="margin-top:14px;min-height:44px">Copy email address</button></div>
     </div>
 
     <footer>
@@ -441,15 +442,23 @@ footer{border-top:1px solid rgba(30,32,32,.25);margin-top:96px;padding:26px 0 34
     });
   });
 
-  /* ---- contact form (preview: nothing is sent) ---- */
+  /* ---- contact form: opens the visitor's email app, addressed to LumiFair ---- */
+  const TO = 'lumifair.consulting@gmail.com';
   const form = document.getElementById('form'), err = document.getElementById('err');
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const d = new FormData(form), name = String(d.get('name') || '').trim(), email = String(d.get('email') || '').trim();
+    const d = new FormData(form), v = (k) => String(d.get(k) || '').trim();
+    const name = v('name'), email = v('email'), org = v('org'), msg = v('msg');
     if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please add your name and a valid email address.'; return; }
     err.textContent = '';
+    const subject = 'Mission inquiry from ' + name + (org ? ' (' + org + ')' : '');
+    const body = (msg || '(No message added)') + '\n\n' + name + (org ? '\n' + org : '') + '\n' + email;
+    location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     document.getElementById('who').textContent = name.split(' ')[0];
     form.hidden = true; const t = document.getElementById('thanks'); t.hidden = false; t.focus();
+  });
+  document.getElementById('copy').addEventListener('click', async (e) => {
+    try { await navigator.clipboard.writeText(TO); e.target.textContent = 'Copied'; } catch { e.target.textContent = TO; }
   });
 }
 </script>
