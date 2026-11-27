@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LumiFair Consulting</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='76%2016%20248%20248'%3E%3Cg%20stroke='%23F6C85F'%20stroke-width='12'%20stroke-linecap='round'%3E%3Cline%20x1='119.5'%20y1='164.1'%20x2='88.9'%20y2='173.3'/%3E%3Cline%20x1='117.3'%20y1='125.4'%20x2='85.8'%20y2='119.9'/%3E%3Cline%20x1='132.6'%20y1='89.8'%20x2='107.0'%20y2='70.7'/%3E%3Cline%20x1='162.3'%20y1='64.9'%20x2='147.9'%20y2='36.3'/%3E%3Cline%20x1='200.0'%20y1='56.0'%20x2='200.0'%20y2='24.0'/%3E%3Cline%20x1='237.7'%20y1='64.9'%20x2='252.1'%20y2='36.3'/%3E%3Cline%20x1='267.4'%20y1='89.8'%20x2='293.0'%20y2='70.7'/%3E%3Cline%20x1='282.7'%20y1='125.4'%20x2='314.2'%20y2='119.9'/%3E%3Cline%20x1='280.5'%20y1='164.1'%20x2='311.1'%20y2='173.3'/%3E%3C/g%3E%3Ccircle%20cx='200'%20cy='140'%20r='64'%20fill='%23F6C85F'/%3E%3Cpath%20d='M%20180%20150%20Q%20200%20168%20220%20150'%20fill='none'%20stroke='%231E2020'%20stroke-width='8'%20stroke-linecap='round'/%3E%3Crect%20x='173'%20y='216'%20width='54'%20height='14'%20rx='7'%20fill='%231E2020'/%3E%3Crect%20x='182'%20y='236'%20width='36'%20height='14'%20rx='7'%20fill='%231E2020'/%3E%3C/svg%3E">
+<meta name="description" content="LumiFair builds software, tooling and automation for nonprofits, charities and high-impact teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE   warm, hopeful, confident; a consultancy for mission-first organizations
+IDEA    one day's light: the page is a sunrise, night at the top, full daylight at the end
+PICTURE the logo's bulb-shaped sun rising over a horizon, rays drawing out, stars fading
+COLOUR  night #0F131B to dusk #1E2433, then terracotta, amber, gold, cream; charcoal ink on light
+TYPE    Plus Jakarta Sans 800 titles, 400-600 body; LAYOUT full-width bands, one pinned services scene
+*/
+:root{--ink:#1E2020;--cream:#F8F5EE;--amber:#F2A541;--gold:#F6C85F;--terra:#C47A5A;--peach:#F2B5A0;--teal:#6A8A86;--mint:#A9C3BF;--night:#0F131B;--dusk:#1E2433;--plum:#4A3B4F;
+--ease:cubic-bezier(.19,1,.22,1);color-scheme:light}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--night);color:var(--cream);font:17px/1.6 "Plus Jakarta Sans",system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:800;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(34px,4.6vw,58px);letter-spacing:-1.5px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.band{padding:clamp(72px,9vw,128px) 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:inherit;font-weight:700;text-decoration:none;border:0;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -16px rgba(0,0,0,.6)}.btn:active{transform:translateY(0);transition-duration:.08s}
+.btn-amber{background:var(--amber);color:var(--ink)}.btn-amber:hover{background:var(--gold)}
+.btn-ghost{box-shadow:inset 0 0 0 2px currentColor;color:var(--cream)}
+.btn-ink{background:var(--ink);color:var(--cream)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.light :focus-visible{outline-color:var(--ink)}
+
+/* header */
+.top{position:fixed;inset:0 0 auto;z-index:20;transition:background .4s,box-shadow .4s,backdrop-filter .4s}
+.top.solid{background:rgba(15,19,27,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(248,245,238,.12)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:76px}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:23px;letter-spacing:-.4px;color:var(--cream)}
+.logo b{font-weight:800}.logo span{font-weight:400}
+.logo svg .rg{transform-origin:200px 140px;transform-box:view-box;transition:transform .8s var(--ease)}
+.logo:hover svg .rg{transform:rotate(20deg)}
+.nav{display:flex;align-items:center;gap:4px 22px;flex-wrap:wrap;font-weight:600;font-size:15px}
+.nav a:not(.btn){display:inline-flex;align-items:center;min-height:44px;text-decoration:none;position:relative;opacity:.8;transition:opacity .2s}
+.nav a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav a:not(.btn):hover,.nav a.on{opacity:1}.nav a:not(.btn):hover::after,.nav a.on::after{transform:scaleX(1)}
+.nav .btn{min-height:44px;padding:0 18px;font-size:15px}
+.menu{display:none}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:96px 24px 96px;overflow:hidden;
+  background:radial-gradient(120% 70% at 50% 100%,#3A2E44 0%,rgba(58,46,68,0) 60%),linear-gradient(180deg,var(--night) 0%,#151B28 55%,var(--dusk) 100%)}
+.hero .dawn{position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 60% at 50% 78%,rgba(242,165,65,.55),rgba(196,122,90,.25) 45%,rgba(30,36,51,0) 75%);opacity:calc(.15 + var(--p,0)*.85)}
+.scene{position:relative;width:min(680px,92vw,74svh);aspect-ratio:760/330;margin:0 auto}
+.scene svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.star{fill:#F8F5EE;opacity:0;animation:twinkle var(--t,3s) ease-in-out var(--d,0s) infinite}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:.9}}
+.stars{opacity:calc(1 - var(--p,0)*1.4);transition:opacity .2s}
+.glow{opacity:0;transform-origin:380px 166px;transform-box:view-box;transform:scale(.5);transition:opacity 1.6s ease .9s,transform 2.2s var(--ease) .9s}
+.bulb{transform-origin:380px 166px;transform-box:view-box;transform:translateY(40px) scale(.82);opacity:0;transition:transform 1.4s var(--ease) .2s,opacity .8s ease .2s}
+.bulb .lit{opacity:0;transition:opacity .5s ease .95s}
+.smile{stroke-dasharray:72;stroke-dashoffset:72;transition:stroke-dashoffset .9s var(--ease) 1.45s}
+.ray{stroke:var(--gold);stroke-width:10;stroke-linecap:round;stroke-dasharray:60;stroke-dashoffset:60;transition:stroke-dashoffset 1s var(--ease)}
+.base rect{transform:translateY(18px);opacity:0;transition:transform 1s var(--ease),opacity .8s ease}
+.ready .glow{opacity:1;transform:none}.ready .bulb{opacity:1;transform:none}.ready .bulb .lit{opacity:1}.ready .smile{stroke-dashoffset:0}.ready .ray{stroke-dashoffset:0}.ready .base rect{transform:none;opacity:1}
+.hero h1{font-size:clamp(40px,5.8vw,82px);letter-spacing:-2.5px;margin-top:clamp(20px,3vw,36px);max-width:1040px}
+.ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.ln>span{display:inline-block;transform:translateY(108%);transition:transform 1.1s var(--ease)}
+.ready .ln>span{transform:none}
+.accent{color:var(--gold)}
+.hero p.lead{max-width:620px;margin:26px auto 0;font-size:clamp(17px,1.6vw,20px);color:#D9D3C7}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform 1.1s var(--ease)}
+.ready .fade{opacity:1;transform:none}
+.cue{position:absolute;bottom:16px;left:50%;translate:-50% 0;font-size:13px;color:#B8B2A6;display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none}
+.cue i{display:block;width:2px;height:34px;background:linear-gradient(var(--gold),transparent);animation:cue 2.2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* reveal on scroll */
+.rv{opacity:0;translate:0 42px;transition:opacity .8s ease var(--d,0s),translate 1.1s var(--ease) var(--d,0s)}
+.rv.in{opacity:1;translate:0 0}
+
+/* pinned services (thesupply.com motion) */
+.pin{position:relative;background:var(--dusk);height:300vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:flex;border-top:1px solid rgba(248,245,238,.14)}
+.stage .left{flex:1.3 1 0;display:flex;flex-direction:column;justify-content:center;padding:96px clamp(24px,5vw,72px) 48px;border-right:1px solid rgba(248,245,238,.14)}
+.stage h2{font-size:clamp(42px,5.6vw,84px);line-height:1.1;letter-spacing:-2px}
+.swap{display:inline-block;height:1.1em;overflow:hidden;vertical-align:top}
+.swap>span{display:flex;flex-direction:column;transition:transform 1s var(--ease)}
+.swap>span>span{display:block;height:1.1em;line-height:1.1em;white-space:nowrap}
+.stage .left p{margin:26px 0 0;max-width:460px;color:#D9D3C7}
+.progress{display:flex;gap:8px;margin-top:34px}.progress i{width:34px;height:4px;border-radius:4px;background:rgba(248,245,238,.2);overflow:hidden;position:relative}
+.progress i::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--ease)}
+.progress i.on::after{transform:scaleX(1)}
+.cols{flex:1 1 0;position:relative;overflow:hidden;display:flex;flex-direction:column;padding-top:76px}
+.cols::before{content:"";position:absolute;top:0;left:0;right:0;height:76px;background:var(--dusk);z-index:5}
+.pan{flex:1 1 0;position:relative;background:var(--dusk);padding:28px clamp(24px,4vw,56px);display:flex;flex-direction:column;justify-content:center;transition:transform 1s var(--ease);will-change:transform}
+.pan+.pan{border-top:1px solid rgba(248,245,238,.14)}
+.pan .fd{opacity:0;transform:translateY(-20px);transition:opacity .35s ease,transform .5s var(--ease)}
+.pan.on .fd{opacity:1;transform:none;transition:opacity .5s ease .3s,transform .6s var(--ease) .3s}
+.pan .tag{display:inline-block;width:46px;height:23px;border-radius:46px 46px 0 0;margin-bottom:16px}
+.pan h3{font-size:clamp(22px,2.3vw,30px);margin-bottom:10px;line-height:1.15}
+.pan p{margin:0;max-width:440px;color:#E4DED2}
+
+/* steps */
+.steps-band{background:linear-gradient(180deg,var(--dusk),var(--plum))}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;margin-top:44px}
+.ring{width:72px;height:72px;border-radius:50%;border:2px solid var(--cream);position:relative;overflow:hidden}
+.ring::after{content:"";position:absolute;inset:0;background:conic-gradient(var(--gold) var(--f,0%),transparent 0);transition:--f 1.4s var(--ease)}
+.step.in .ring::after{--f:var(--to)}
+.ringwrap{position:relative;width:72px;height:72px}
+.beam{position:absolute;left:-24px;top:-24px;width:120px;height:120px;overflow:visible;pointer-events:none}
+.beam path{fill:none;stroke:var(--ink);stroke-width:4.5;stroke-linecap:round;stroke-dasharray:34;stroke-dashoffset:34;transition:stroke-dashoffset .8s var(--ease) 1.15s}
+.step.in .beam line,.step.in .beam path{stroke-dashoffset:0}
+.step h3{font-size:24px;margin:18px 0 8px}.step p{margin:0;color:#E4DED2}
+
+/* values */
+.values-band{background:linear-gradient(180deg,var(--plum),#8A5550 55%,var(--terra))}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:40px}
+.card{position:relative;overflow:hidden;background:var(--cream);color:var(--ink);border-radius:22px;padding:28px 26px;min-height:210px;transition:transform .5s var(--ease),box-shadow .5s var(--ease),opacity .8s ease var(--d,0s),translate 1.1s var(--ease) var(--d,0s)}
+.card::before{content:"";position:absolute;inset:0;background:var(--b);clip-path:polygon(0 0,0 0,0 100%,0 100%);transition:clip-path .7s cubic-bezier(.65,0,.35,1)}
+.card:hover::before,.card:focus-visible::before{clip-path:polygon(0 0,100% 0,0 100%,0 100%)}
+.card>*{position:relative}.card:hover,.card:focus-visible{transform:translateY(-6px);box-shadow:0 22px 44px -26px rgba(0,0,0,.6)}
+.card h3{font-size:22px;margin-bottom:10px;line-height:1.2}.card p{margin:0;font-size:16px}
+.card .strip{position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--s)}
+
+/* about */
+.about-band{background:linear-gradient(180deg,var(--terra) 0%,var(--amber) 30%,var(--gold) 100%);color:var(--ink)}
+.about{display:flex;flex-wrap:wrap;gap:48px}
+.about .story{flex:1 1 520px}.about .story p{font-size:18px;line-height:1.7;margin:0 0 16px}
+.stats{flex:1 1 300px;display:grid;gap:14px;align-content:start}
+.stat{background:rgba(248,245,238,.72);border-radius:22px;padding:22px 26px}
+.stat b{display:block;font-size:44px;line-height:1;letter-spacing:-1px}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:6px 12px;border:1px solid rgba(30,32,32,.45);border-radius:999px;font-size:13px}
+
+/* faq + contact */
+.light{background:linear-gradient(180deg,var(--gold) 0%,#F7E3A8 18%,var(--cream) 42%);color:var(--ink)}
+.faq{max-width:880px}
+.q{border-top:1px solid rgba(30,32,32,.25)}
+.q button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:68px;padding:18px 0;font-size:20px;font-weight:700;cursor:pointer}
+.q button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.q .pm{flex:none;width:28px;height:28px;position:relative}.q .pm::before,.q .pm::after{content:"";position:absolute;left:4px;right:4px;top:13px;height:2px;background:currentColor;transition:transform .5s var(--ease)}
+.q .pm::after{transform:rotate(90deg)}.q.open .pm::after{transform:rotate(0)}
+.q .a{height:0;overflow:hidden;transition:height .55s var(--ease)}.q .a p{margin:0;padding:0 0 22px;max-width:680px}
+.pill{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;background:var(--peach);border-radius:999px;padding:22px 24px 22px 28px;margin-top:72px}
+.pill .dot{flex:none;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 50% 60%,var(--gold) 0 58%,rgba(246,200,95,.35) 60%,transparent 72%);animation:pulse 3.6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.pill p{flex:1 1 300px;margin:0;font-size:17px;line-height:1.45}.pill p b{font-size:21px}
+.contact{display:flex;flex-wrap:wrap;gap:48px;padding-top:96px}
+.contact .intro{flex:1 1 380px}.contact .intro p{font-size:18px}
+form{flex:1 1 440px;display:grid;gap:14px}
+label{display:grid;gap:6px;font-weight:600}
+input,textarea{font:inherit;font-size:16px;padding:14px 16px;border:2px solid var(--ink);border-radius:14px;background:#fff;color:var(--ink);transition:box-shadow .25s}
+input:focus,textarea:focus{outline:none;box-shadow:0 0 0 4px rgba(242,165,65,.55)}
+.thanks{flex:1 1 440px;background:var(--gold);border-radius:24px;padding:30px}
+.thanks p{margin:8px 0 0}
+footer{border-top:1px solid rgba(30,32,32,.25);margin-top:96px;padding:26px 0 34px;display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:14px}
+
+@media (max-width:860px){
+  .menu{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:0;background:rgba(248,245,238,.12);color:var(--cream);cursor:pointer}
+  .nav{position:absolute;top:76px;left:12px;right:12px;flex-direction:column;align-items:stretch;gap:0;padding:12px 20px 20px;background:rgba(15,19,27,.96);border-radius:20px;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .3s,transform .4s var(--ease)}
+  .nav.open{opacity:1;pointer-events:auto;transform:none}
+  .nav .btn{margin-top:10px}
+}
+@media (max-width:760px){
+  .pin{height:auto}.stage{position:static;height:auto;flex-direction:column;border-top:0}
+  .stage .left{position:sticky;top:76px;z-index:4;background:var(--dusk);border-right:0;border-bottom:1px solid rgba(248,245,238,.16);padding:18px 24px 16px;box-shadow:0 18px 24px -18px rgba(15,19,27,.9)}
+  .stage h2{font-size:clamp(30px,8.6vw,38px);letter-spacing:-1px}.stage h2 br{display:none}
+  .stage .left p{display:none}.progress{margin-top:14px}
+  .cols{overflow:visible;padding-top:0}.cols::before{display:none}
+  .pan{transform:none!important;min-height:46vh;padding:36px 24px}
+  .pan+.pan{border-top:1px solid rgba(248,245,238,.14)}
+  .pan .fd{transform:translateY(28px)}
+  .pill{border-radius:28px}.hero{padding-top:100px}
+}
+.card.lit::before{clip-path:polygon(0 0,100% 0,0 100%,0 100%)}
+.card.lit{transform:translateY(-6px);box-shadow:0 22px 44px -26px rgba(0,0,0,.6)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;translate:none}.ln>span,.fade{transform:none;opacity:1}.bulb,.glow{opacity:1;transform:none}.bulb .lit{opacity:1}.ray,.smile{stroke-dashoffset:0}.base rect{opacity:1;transform:none}
+  .pan{transform:none!important}.pan .fd{opacity:1;transform:none}.step .ring::after{--f:var(--to)}.beam line,.beam path{stroke-dashoffset:0}
+}
+@property --f{syntax:'<percentage>';inherits:false;initial-value:0%}
+</style>
+</head>
+<body>
+
+<header class="top" id="top-bar">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="LumiFair home">
+      <svg width="46" height="46" viewBox="76 16 248 248" aria-hidden="true">
+        <g class="rg" stroke="#F6C85F" stroke-width="10" stroke-linecap="round"><line x1="119.5" y1="164.1" x2="88.9" y2="173.3"></line><line x1="117.3" y1="125.4" x2="85.8" y2="119.9"></line><line x1="132.6" y1="89.8" x2="107.0" y2="70.7"></line><line x1="162.3" y1="64.9" x2="147.9" y2="36.3"></line><line x1="200.0" y1="56.0" x2="200.0" y2="24.0"></line><line x1="237.7" y1="64.9" x2="252.1" y2="36.3"></line><line x1="267.4" y1="89.8" x2="293.0" y2="70.7"></line><line x1="282.7" y1="125.4" x2="314.2" y2="119.9"></line><line x1="280.5" y1="164.1" x2="311.1" y2="173.3"></line></g>
+        <circle cx="200" cy="140" r="64" fill="#F6C85F"></circle>
+        <path d="M 180 150 Q 200 168 220 150" fill="none" stroke="#1E2020" stroke-width="7" stroke-linecap="round"></path>
+        <rect x="173" y="216" width="54" height="14" rx="7" fill="#F8F5EE"></rect><rect x="182" y="236" width="36" height="14" rx="7" fill="#F8F5EE"></rect>
+      </svg>
+      <span><b>Lumi</b><span>Fair</span></span>
+    </a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+    </button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a><a href="#how">How it works</a><a href="#values">Values</a><a href="#about">About</a><a href="#faq">Questions</a>
+      <a class="btn btn-amber" href="#contact">Tell me about your mission</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="dawn" aria-hidden="true"></div>
+  <div class="scene">
+    <svg viewBox="0 0 760 330" role="img" aria-label="A smiling light bulb switching on, with rays of light around it">
+      <defs>
+        <radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#F6C85F" stop-opacity=".7"></stop><stop offset=".45" stop-color="#F2A541" stop-opacity=".25"></stop><stop offset="1" stop-color="#F2A541" stop-opacity="0"></stop></radialGradient>
+      </defs>
+      <g class="stars" id="stars"></g>
+      <circle class="glow" cx="380" cy="166" r="250" fill="url(#g)"></circle>
+      <g class="rays" id="rays"></g>
+      <g class="bulb">
+        <circle cx="380" cy="166" r="92" fill="#3A3646"></circle>
+        <circle class="lit" cx="380" cy="166" r="92" fill="#F6C85F"></circle>
+        <path class="smile" d="M 350 180 Q 380 206 410 180" fill="none" stroke="#1E2020" stroke-width="10" stroke-linecap="round"></path>
+      </g>
+      <g class="base"><rect x="341" y="274" width="78" height="20" rx="10" fill="#F8F5EE" style="transition-delay:1.5s"></rect><rect x="354" y="302" width="52" height="20" rx="10" fill="#F8F5EE" style="transition-delay:1.62s"></rect></g>
+    </svg>
+  </div>
+  <h1><span class="ln"><span style="transition-delay:1.2s">Technology for organizations</span></span><span class="ln"><span style="transition-delay:1.32s">that put <span class="accent">mission</span> first.</span></span></h1>
+  <p class="lead fade" style="transition-delay:1.6s">LumiFair builds software, tooling and automation for nonprofits, charities and high-impact teams, so more of your time and money goes to the mission.</p>
+  <div class="ctas fade" style="transition-delay:1.75s">
+    <a class="btn btn-amber" href="#contact">Tell me about your mission</a>
+    <a class="btn btn-ghost" href="#services">See what LumiFair does</a>
+  </div>
+  <a class="cue fade" href="#services" style="transition-delay:2.2s">Scroll to explore<i aria-hidden="true"></i></a>
+</section>
+
+<section class="pin" id="services" aria-label="Services">
+  <div class="stage">
+    <div class="left">
+      <h2>Lighten the <br>load on your <br><span class="swap"><span id="swap"><span style="color:#F2B5A0">tools.</span><span style="color:#A9C3BF">code.</span><span style="color:#F6C85F">team.</span></span></span></h2>
+      <p>Three services, matched to the size of your organization.</p>
+      <div class="progress" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <div class="cols">
+      <div class="pan" style="z-index:3"><div class="fd"><span class="tag" style="background:#F2B5A0"></span><h3>Application building</h3><p>Full-stack web apps and internal tools, sized to your organization. Start small, then grow it with you.</p></div></div>
+      <div class="pan" style="z-index:2"><div class="fd"><span class="tag" style="background:#A9C3BF"></span><h3>Expert reviews and productization</h3><p>A senior second look at the software you already have, and help turning a promising prototype into something reliable.</p></div></div>
+      <div class="pan" style="z-index:1"><div class="fd"><span class="tag" style="background:#F2A541"></span><h3>Automation and tooling for your team</h3><p>Efficiency reviews, business automation, and custom AI tools and workflows that give your team modern tooling without the jargon.</p></div></div>
+</div>
+  </div>
+</section>
+
+<section class="band steps-band" id="how">
+  <div class="wrap">
+    <h2 class="rv">From first light to <span class="accent">full day</span></h2>
+    <div class="steps">
+      <div class="step rv" style="--d:0s;--to:0%"><div class="ring"></div><h3>Talk</h3><p>A conversation about your mission, your team and what slows you down.</p></div>
+      <div class="step rv" style="--d:.1s;--to:25%"><div class="ring"></div><h3>Prototype</h3><p>Build and ship small prototypes and proofs of concept that solve a real problem within days.</p></div>
+      <div class="step rv" style="--d:.2s;--to:50%"><div class="ring"></div><h3>Build what helps</h3><p>If it doesn't make the job easier, it never gets fully built.</p></div>
+      <div class="step rv" style="--d:.3s;--to:100%"><div class="ringwrap"><div class="ring"></div><svg class="beam" viewBox="-60 -60 120 120" aria-hidden="true"><path d="M -14 4 Q 0 17 14 4"></path></svg></div><h3>Hand over</h3><p>Your team learns the tools and runs them without LumiFair.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band values-band" id="values">
+  <div class="wrap">
+    <h2 class="rv">What LumiFair stands for</h2>
+    <div class="cards">
+      <article class="card rv" tabindex="0" style="--b:#F6C85F;--s:#F2A541;--d:0s"><h3>Mission before margin</h3><p>LumiFair turns down work for organizations that put profit ahead of people.</p><span class="strip"></span></article>
+      <article class="card rv" tabindex="0" style="--b:#F2B5A0;--s:#C47A5A;--d:.08s"><h3>Trust as the starting point</h3><p>Good will is assumed and the work happens in the open.</p><span class="strip"></span></article>
+      <article class="card rv" tabindex="0" style="--b:#A9C3BF;--s:#6A8A86;--d:.16s"><h3>People stay at the center</h3><p>Automation frees people for the mission. It does not replace them.</p><span class="strip"></span></article>
+      <article class="card rv" tabindex="0" style="--b:#F6C85F;--s:#F2A541;--d:.24s"><h3>Start small, prove value fast</h3><p>Prototype first. If it doesn't make the work easier, it doesn't get built.</p><span class="strip"></span></article>
+    </div>
+  </div>
+</section>
+
+<section class="band about-band" id="about">
+  <div class="wrap about">
+    <div class="story">
+      <h2 class="rv" style="margin-bottom:24px">Why LumiFair exists</h2>
+      <p class="rv">I've spent more than ten years building software in the corporate and public sector: frontline IT support, security, large modernization projects, and later as a managing partner at a software consultancy, hiring and training developers and leading teams.</p>
+      <p class="rv">That work taught me how good software gets built. Start small. Involve the people who will use it. Leave the team able to run it themselves. It also taught me that why you do the work matters as much as how.</p>
+      <p class="rv">LumiFair is how I put that experience to work for organizations doing work that truly matters.</p>
+      <p class="rv" style="margin:0"><b>Ian Hauser</b>, founder<br><span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>Claude Certified Developer</span></p>
+    </div>
+    <div class="stats">
+      <div class="stat rv" style="--d:0s"><b data-count="10" data-suffix="+ years">10+ years</b>building and modernizing software</div>
+      <div class="stat rv" style="--d:.1s"><b>Dozens</b>of developers and IT professionals trained</div>
+      <div class="stat rv" style="--d:.2s"><b data-count="1000" data-suffix="+">1,000+</b>technical interviews run</div>
+    </div>
+  </div>
+</section>
+
+<section class="band light" id="faq">
+  <div class="wrap">
+    <div class="faq">
+      <h2 class="rv" style="margin-bottom:24px">Questions people ask</h2>
+      <div class="q"><button type="button" aria-expanded="false">Who does LumiFair work with?<span class="pm" aria-hidden="true"></span></button><div class="a"><p>Nonprofits, charities and mission-driven organizations working on high-impact causes, and the partners that support them.</p></div></div>
+      <div class="q"><button type="button" aria-expanded="false">How much does it cost?<span class="pm" aria-hidden="true"></span></button><div class="a"><p>Pricing is adjusted for the size of your organization and set after a first conversation.</p></div></div>
+      <div class="q"><button type="button" aria-expanded="false">Will automation replace our staff?<span class="pm" aria-hidden="true"></span></button><div class="a"><p>No. The goal is to free your people for the mission, not to replace them.</p></div></div>
+      <div class="q"><button type="button" aria-expanded="false">Where are you based?<span class="pm" aria-hidden="true"></span></button><div class="a"><p>Regina, Canada. LumiFair works with organizations anywhere.</p></div></div>
+      <div style="border-top:1px solid rgba(30,32,32,.25)"></div>
+    </div>
+
+    <div class="pill rv">
+      <span class="dot" aria-hidden="true"></span>
+      <p><b>Small budget, big mission?</b><br>Let's jump on a call and see how I can help you achieve more with less.</p>
+      <a class="btn btn-ink" href="#contact">Let's talk</a>
+    </div>
+
+    <div class="contact" id="contact">
+      <div class="intro">
+        <h2 class="rv" style="margin-bottom:16px">Tell me about your mission</h2>
+        <p>Every project starts with a conversation. Pricing is adjusted for the size of your organization.</p>
+        <p style="font-size:15px;color:#4A4D4D">Based in Regina, Canada. Working with organizations anywhere.</p>
+      </div>
+      <form id="form" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Organization<input name="org" autocomplete="organization"></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>What's your mission, and what slows you down?<textarea name="msg" rows="4"></textarea></label>
+        <button class="btn btn-ink" type="submit" style="justify-self:start">Send</button>
+        <p id="err" role="alert" style="margin:0;color:#8A2E12;font-weight:600"></p>
+      </form>
+      <div class="thanks" id="thanks" hidden tabindex="-1"><b style="font-size:22px">Thanks, <span id="who"></span>.</b><p>This preview doesn't send messages yet. On the live site, Ian will reply within a day or two.</p></div>
+    </div>
+
+    <footer>
+      <span>© 2026 LumiFair Consulting Inc. · Regina, Saskatchewan</span>
+      <a href="#contact">Small budget, big mission? Let's talk.</a>
+    </footer>
+  </div>
+</section>
+</main>
+
+<script>
+{
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+
+  /* ---- hero: stars, rays, load sequence ---- */
+  const NS = 'http://www.w3.org/2000/svg';
+  const starsG = document.getElementById('stars');
+  let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  for (let i = 0; i < 46; i++) {
+    const c = document.createElementNS(NS, 'circle');
+    const x = rnd() * 760, y = rnd() * 300;
+    if (Math.hypot(x - 380, y - 166) < 200) { i--; continue; }
+    c.setAttribute('cx', x.toFixed(1)); c.setAttribute('cy', y.toFixed(1)); c.setAttribute('r', (0.8 + rnd() * 1.6).toFixed(2));
+    c.setAttribute('class', 'star'); c.style.setProperty('--d', (rnd() * 3).toFixed(2) + 's'); c.style.setProperty('--t', (2.4 + rnd() * 2.6).toFixed(2) + 's');
+    starsG.appendChild(c);
+  }
+  const raysG = document.getElementById('rays');
+  const N = 9;
+  for (let i = 0; i < N; i++) {
+    const a = (150 + 240 * (i + 0.5) / N) * Math.PI / 180;
+    const r1 = 122, r2 = 166, cx = 380, cy = 166;
+    const l = document.createElementNS(NS, 'line');
+    l.setAttribute('x1', (cx + Math.cos(a) * r1).toFixed(1)); l.setAttribute('y1', (cy + Math.sin(a) * r1).toFixed(1));
+    l.setAttribute('x2', (cx + Math.cos(a) * r2).toFixed(1)); l.setAttribute('y2', (cy + Math.sin(a) * r2).toFixed(1));
+    l.setAttribute('class', 'ray');
+    l.style.transitionDelay = (1.05 + Math.abs(i - (N - 1) / 2) * 0.08).toFixed(2) + 's';
+    raysG.appendChild(l);
+  }
+  requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add('ready')));
+
+  /* ---- header, menu, active nav ---- */
+  const bar = document.getElementById('top-bar');
+  const menu = document.querySelector('.menu'), nav = document.getElementById('nav');
+  menu.addEventListener('click', () => { const o = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', o); menu.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); });
+  nav.addEventListener('click', (e) => { if (e.target.closest('a')) { nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); } });
+  const links = [...nav.querySelectorAll('a[href^="#"]:not(.btn)')];
+  const targets = links.map((a) => document.querySelector(a.getAttribute('href')));
+
+  /* ---- reveal on scroll ---- */
+  const io = new IntersectionObserver((es) => {
+    for (const e of es) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); if (e.target.classList.contains('stat')) count(e.target.querySelector('b')); }
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.05 });
+  document.querySelectorAll('.rv').forEach((el) => reduce ? el.classList.add('in') : io.observe(el));
+
+  function count(b) {
+    if (reduce || !b || !b.dataset.count) return;
+    const to = +b.dataset.count, pre = b.dataset.prefix || '', suf = b.dataset.suffix || '', t0 = performance.now(), dur = 1400;
+    const tick = (t) => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 4); b.textContent = pre + Math.round(to * e).toLocaleString('en-CA') + suf; if (k < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---- pinned services ---- */
+  const pin = document.getElementById('services');
+  const pans = [...pin.querySelectorAll('.pan')], bars = [...pin.querySelectorAll('.progress i')], swap = document.getElementById('swap');
+  let stage = null;
+  function setStage(s) {
+    if (s === stage) return; stage = s;
+    pans.forEach((p, i) => { const on = i <= s; p.classList.toggle('on', on); p.style.transform = on ? 'translateY(0)' : 'translateY(' + (-(i - s) * 100) + '%)'; });
+    bars.forEach((b, i) => b.classList.toggle('on', i <= s));
+    swap.style.transform = 'translateY(' + (-Math.max(s, 0) * 1.1) + 'em)';
+  }
+  const mobile = matchMedia('(max-width: 760px)'), touch = matchMedia('(hover: none)');
+  const cards = [...document.querySelectorAll('.card')];
+
+  /* ---- one scroll loop ---- */
+  let ticking = false;
+  function frame() {
+    ticking = false;
+    const y = scrollY, vh = innerHeight;
+    bar.classList.toggle('solid', y > 40);
+    root.style.setProperty('--p', Math.min(1, y / (vh * 0.9)).toFixed(3));
+    if (reduce) setStage(pans.length - 1);
+    else if (mobile.matches) {
+      let s = -1; pans.forEach((p, i) => { if (p.getBoundingClientRect().top < vh * 0.62) s = i; });
+      setStage(s);
+    } else {
+      const r = pin.getBoundingClientRect();
+      const prog = (-r.top) / Math.max(1, r.height - vh);
+      setStage(prog < 0.04 ? -1 : Math.min(pans.length - 1, Math.floor(prog * pans.length * 0.999 + 0.25)));
+    }
+    if (!reduce && (mobile.matches || touch.matches)) cards.forEach((c) => { const r = c.getBoundingClientRect(), m = r.top + r.height / 2; c.classList.toggle('lit', m > vh * 0.22 && m < vh * 0.72); });
+    else cards.forEach((c) => c.classList.remove('lit'));
+    let cur = -1; targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top < vh * 0.45) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('on', i === cur));
+  }
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll);
+  document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+  frame();
+
+  /* ---- FAQ with smooth height ---- */
+  document.querySelectorAll('.q button').forEach((btn) => {
+    const q = btn.parentElement, a = q.querySelector('.a');
+    btn.addEventListener('click', () => {
+      const open = !q.classList.contains('open');
+      q.classList.toggle('open', open); btn.setAttribute('aria-expanded', open);
+      if (reduce) { a.style.height = open ? 'auto' : '0'; return; }
+      const h = a.scrollHeight;
+      if (open) { a.style.height = h + 'px'; a.addEventListener('transitionend', function f() { if (q.classList.contains('open')) a.style.height = 'auto'; a.removeEventListener('transitionend', f); }); }
+      else { a.style.height = h + 'px'; requestAnimationFrame(() => { a.style.height = '0'; }); }
+    });
+  });
+
+  /* ---- contact form (preview: nothing is sent) ---- */
+  const form = document.getElementById('form'), err = document.getElementById('err');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const d = new FormData(form), name = String(d.get('name') || '').trim(), email = String(d.get('email') || '').trim();
+    if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please add your name and a valid email address.'; return; }
+    err.textContent = '';
+    document.getElementById('who').textContent = name.split(' ')[0];
+    form.hidden = true; const t = document.getElementById('thanks'); t.hidden = false; t.focus();
+  });
+}
+</script>
+</body>
+</html>
